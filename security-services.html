@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,6 +8,46 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style/style.css">
+  <style>
+    .hero-section { 
+      background: url('images/security.jpg') no-repeat center center;
+      background-size: 100% 100%;
+      color: black; 
+      padding: 100px 0; 
+      text-align: center; 
+    }
+    /* Ensure cards have equal height and are longer */
+    .row.equal-height {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .row.equal-height .col-md-3 {
+      display: flex;
+    }
+    .row.equal-height .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 250px; /* Consistent with other pages */
+    }
+    .row.equal-height .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      color: white; /* Ensure text is readable on background */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Improve text visibility */
+    }
+    .card { 
+      background-color: #b5d4a2; /* Fallback color */
+      background-size: cover;
+      background-position: center;
+    }
+    .card-body h5 {
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -45,7 +85,7 @@
   <section id="security-services" class="hero-section">
     <div class="container">
       <h1>Security Services</h1>
-      <p>Ensuring safety and peace of mind for your properties and communities.</p>
+      <p>Delivering comprehensive security solutions to protect your properties and communities, fostering safety and peace of mind through innovative and reliable services.</p>
       <a href="#contact" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
     </div>
   </section>
@@ -54,21 +94,69 @@
   <section id="content" class="section-padding">
     <div class="container">
       <h2 class="text-center mb-5">Our Security Services</h2>
-      <p class="text-center">[Please provide details about your Security Services, such as protection plans, surveillance, or partnerships, and we can insert them here.]</p>
-      <div class="row">
-        <div class="col-md-6 mb-4">
+      <p class="text-center">Safe Haven Realty provides a wide range of security services tailored to safeguard individuals, properties, and organizations. From advanced surveillance systems to professional security personnel, our solutions ensure comprehensive protection against physical and digital threats.</p>
+      <div class="row equal-height">
+        <div class="col-md-3 mb-4">
           <div class="card text-center">
             <div class="card-body">
-              <h5 class="card-title">Service 1</h5>
-              <p class="card-text">[Description of security service.]</p>
+              <h5 class="card-title">Security Consulting</h5>
+              <p class="card-text">Expert risk assessments and customized security strategy development to address specific vulnerabilities.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 mb-4">
+        <div class="col-md-3 mb-4">
           <div class="card text-center">
             <div class="card-body">
-              <h5 class="card-title">Service 2</h5>
-              <p class="card-text">[Description of security service.]</p>
+              <h5 class="card-title">Access Control</h5>
+              <p class="card-text">Advanced systems to regulate and secure access to restricted areas or facilities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Surveillance</h5>
+              <p class="card-text">CCTV camera installation, real-time monitoring, and ongoing maintenance for enhanced security.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Alarm Systems</h5>
+              <p class="card-text">Intrusion detection and fire alarm systems with professional installation and monitoring.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Cybersecurity</h5>
+              <p class="card-text">Robust protection against cyber threats, ensuring data integrity and preventing breaches.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Security Training</h5>
+              <p class="card-text">Comprehensive programs on security practices and emergency response for staff and communities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Security Personnel</h5>
+              <p class="card-text">Trained security guards and event security services for reliable on-site protection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Investigation Services</h5>
+              <p class="card-text">Discreet private investigations for individuals and organizations to address security concerns.</p>
             </div>
           </div>
         </div>

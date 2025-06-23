@@ -14,7 +14,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,6 +22,16 @@
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="otherServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Other Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="otherServicesDropdown">
+              <li><a class="dropdown-item" href="educational-services.html">Educational Services</a></li>
+              <li><a class="dropdown-item" href="humanitarian-services.html">Humanitarian Services</a></li>
+              <li><a class="dropdown-item" href="security-services.html">Security Services</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="#why-choose-us">Why Choose Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
@@ -61,7 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4 " >
+        <div class="col-md-3 mb-4">
           <div class="card service-card text-center">
             <div class="card-body custom-height" style="background: url('images/thumb2.jpg') no-repeat center center;">
               <h5 class="card-title">Investment Guidance</h5>

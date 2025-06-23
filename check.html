@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Haven - Education Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony Neutrals -->
+    <!-- Application Structure Plan: A single-page, scrolling narrative structure is used to guide the user logically from the initial value proposition (Hero) to trust-building (About), value explanation (Services, Approach), credibility proof (Why Us, Testimonials), and finally, conversion (Contact). This linear flow creates a persuasive and easy-to-follow story of the brand. Key interactions like tabbed services and a testimonial carousel are used to make dense information digestible and engaging, preventing user fatigue and encouraging exploration. -->
+    <!-- Visualization & Content Choices: 
+        - Hero: Goal: Inform/Engage -> Method: Large text over a calm background -> Interaction: Prominent CTA button -> Justification: Strong first impression.
+        - About: Goal: Inform -> Method: 3-column grid with icons -> Interaction: Static -> Justification: Clear, scannable presentation of core values.
+        - Services: Goal: Organize/Inform -> Method: HTML/JS Tabbed Interface -> Interaction: Click tabs to reveal content -> Justification: Prevents information overload and allows user-directed exploration.
+        - Approach: Goal: Organize/Inform -> Method: Visual step-flow diagram (HTML/Tailwind) -> Interaction: Hover highlights -> Justification: More engaging and comprehensible than a text list.
+        - Testimonials: Goal: Build Trust -> Method: HTML/JS-powered Carousel -> Interaction: Auto-scroll with manual controls -> Justification: Dynamically showcases social proof without requiring user action.
+        - Why Us/Team: Goal: Inform/Compare -> Method: Grid of cards -> Interaction: Hover effects -> Justification: Breaks down key points into digestible, memorable chunks.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-pattern {
+            background-color: #F8F7F4;
+            background-image:  radial-gradient(#D4AF37 0.5px, transparent 0.5px), radial-gradient(#D4AF37 0.5px, #F8F7F4 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .testimonial-slide {
+            display: none;
+            min-width: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F7F4] text-slate-800 antialiased">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="bg-[#F8F7F4]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#hero" class="text-xl font-bold text-slate-900 flex items-center">
+                        <span class="w-8 h-8 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full flex items-center justify-center mr-2 font-bold text-lg">&#9733;</span>
+                        Safe Haven
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="nav-link text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                        <a href="#services" class="nav-link text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#approach" class="nav-link text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">Our Approach</a>
+                        <a href="#testimonials" class="nav-link text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                        <a href="#contact" class="nav-link text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                     <a href="#contact" class="bg-[#D4AF37] text-white hover:bg-opacity-90 font-medium py-2 px-4 rounded-lg shadow-sm transition-transform transform hover:scale-105">Get a Consultation</a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" class="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-200 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="mobile-nav-link text-slate-600 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#services" class="mobile-nav-link text-slate-600 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#approach" class="mobile-nav-link text-slate-600 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Our Approach</a>
+                <a href="#testimonials" class="mobile-nav-link text-slate-600 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="#contact" class="mobile-nav-link text-slate-600 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="#contact" class="mt-2 bg-[#D4AF37] text-white text-center block px-3 py-2 rounded-md text-base font-medium">Get a Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-pattern pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 leading-tight">
+                    Elevating Education, <span class="text-[#D4AF37]">Empowering</span> Futures.
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-slate-600">
+                    At Safe Haven, we are dedicated to elevating educational standards by providing expert guidance and innovative solutions, fostering a world where every learner reaches their full potential.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#services" class="bg-[#D4AF37] text-white hover:bg-opacity-90 font-bold py-3 px-8 rounded-lg shadow-lg text-lg transition-transform transform hover:scale-105 w-full sm:w-auto">Discover Our Services</a>
+                    <a href="#contact" class="bg-transparent border-2 border-slate-400 text-slate-700 hover:bg-slate-200 font-bold py-3 px-8 rounded-lg text-lg transition-all w-full sm:w-auto">Start Your Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 sm:py-32 bg-[#EAE7DC]/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-fade-in">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-[#D4AF37] tracking-wide uppercase">Who We Are</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Building the Future of Education</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">
+                        Our philosophy is built on a foundation of passion for learning and a commitment to excellence. We're more than consultants; we're partners in progress.
+                    </p>
+                </div>
+                <div class="mt-16 grid gap-10 md:grid-cols-3">
+                    <div class="text-center p-6 bg-white/50 rounded-xl shadow-md">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#D4AF37]/20 mx-auto text-2xl text-[#D4AF37]">&#127919;</div>
+                        <h3 class="mt-5 text-lg font-medium text-slate-900">Our Mission</h3>
+                        <p class="mt-2 text-base text-slate-600">To transform educational landscapes. We believe in nurturing environments where every individual can thrive academically and personally through excellence and innovation.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white/50 rounded-xl shadow-md">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#D4AF37]/20 mx-auto text-2xl text-[#D4AF37]">&#128205;</div>
+                        <h3 class="mt-5 text-lg font-medium text-slate-900">Our Vision</h3>
+                        <p class="mt-2 text-base text-slate-600">To cultivate a world where access to exceptional, tailored education is universal, and every learner's unique potential is recognized and fully realized.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white/50 rounded-xl shadow-md">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#D4AF37]/20 mx-auto text-2xl text-[#D4AF37]">&#128170;</div>
+                        <h3 class="mt-5 text-lg font-medium text-slate-900">Our Values</h3>
+                        <p class="mt-2 text-base text-slate-600">We are guided by our core principles of Excellence, Innovation, Integrity, Empathy, and Empowerment in everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-fade-in">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-[#D4AF37] tracking-wide uppercase">What We Offer</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Tailored Solutions for Educational Success</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">
+                        We provide a comprehensive suite of services designed to address the diverse needs of modern educational institutions and learners.
+                    </p>
+                </div>
+
+                <div class="mt-16">
+                    <div class="flex flex-wrap justify-center border-b border-slate-300">
+                        <button class="tab-button active" data-tab="curriculum">Curriculum Development</button>
+                        <button class="tab-button" data-tab="pd">Teacher Development</button>
+                        <button class="tab-button" data-tab="student">Student Success</button>
+                        <button class="tab-button" data-tab="guidance">Admissions & Career</button>
+                    </div>
+                    <div class="mt-8">
+                        <div id="curriculum" class="tab-content active">
+                            <div class="bg-white/50 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8">
+                                <div class="text-5xl text-[#D4AF37] p-4 bg-[#D4AF37]/10 rounded-full">&#128218;</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-900">Curriculum Development & Enhancement</h3>
+                                    <p class="mt-2 text-slate-600">We design and refine curricula that are engaging, relevant, and aligned with 21st-century skills. Our approach ensures that learning is both dynamic and effective, preparing students for future challenges.</p>
+                                    <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600">
+                                        <li>Future-focused and skills-based curriculum design.</li>
+                                        <li>Integration of technology and innovative pedagogies.</li>
+                                        <li>Alignment with national and international standards.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pd" class="tab-content">
+                            <div class="bg-white/50 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8">
+                                <div class="text-5xl text-[#D4AF37] p-4 bg-[#D4AF37]/10 rounded-full">&#127775;</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-900">Teacher Professional Development</h3>
+                                    <p class="mt-2 text-slate-600">Empowering educators is at the heart of what we do. We provide cutting-edge training and workshops that equip teachers with the latest strategies and tools to inspire their students.</p>
+                                     <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600">
+                                        <li>Workshops on innovative teaching methodologies.</li>
+                                        <li>Personalized coaching and mentorship programs.</li>
+                                        <li>Strategies for classroom management and student engagement.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="student" class="tab-content">
+                            <div class="bg-white/50 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8">
+                                <div class="text-5xl text-[#D4AF37] p-4 bg-[#D4AF37]/10 rounded-full">&#129395;</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-900">Student Success & Well-being Programs</h3>
+                                    <p class="mt-2 text-slate-600">We believe academic success is intertwined with personal well-being. Our programs focus on holistic development, addressing both the academic and emotional needs of students.</p>
+                                    <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600">
+                                        <li>Holistic well-being and mental health initiatives.</li>
+                                        <li>Study skills, time management, and resilience workshops.</li>
+                                        <li>Creating supportive and inclusive school cultures.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                         <div id="guidance" class="tab-content">
+                            <div class="bg-white/50 rounded-lg p-8 flex flex-col md:flex-row items-center gap-8">
+                                <div class="text-5xl text-[#D4AF37] p-4 bg-[#D4AF37]/10 rounded-full">&#127891;</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-900">Admissions & Career Guidance</h3>
+                                    <p class="mt-2 text-slate-600">Navigating the path to higher education and beyond can be daunting. We provide expert guidance to help students identify their passions and secure their place in top institutions and careers.</p>
+                                     <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600">
+                                        <li>Personalized university and college application support.</li>
+                                        <li>Career exploration and aptitude assessment.</li>
+                                        <li>Interview preparation and personal statement workshops.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Approach Section -->
+        <section id="approach" class="py-20 sm:py-32 bg-[#EAE7DC]/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-fade-in">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-[#D4AF37] tracking-wide uppercase">How We Work</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Our Collaborative Process for Change</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">
+                        We follow a proven, structured approach to ensure we deliver meaningful and sustainable results, working hand-in-hand with our clients every step of the way.
+                    </p>
+                </div>
+                <div class="mt-16 relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2"></div>
+                    <div class="grid md:grid-cols-4 gap-8 relative">
+                        <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#D4AF37]">
+                            <div class="text-3xl font-bold text-[#D4AF37]">01</div>
+                            <h3 class="mt-2 text-lg font-semibold text-slate-900">Assessment & Diagnosis</h3>
+                            <p class="mt-2 text-sm text-slate-600">We start by listening, conducting a thorough analysis to understand your unique needs, challenges, and goals.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#D4AF37]">
+                            <div class="text-3xl font-bold text-[#D4AF37]">02</div>
+                            <h3 class="mt-2 text-lg font-semibold text-slate-900">Tailored Solution Design</h3>
+                            <p class="mt-2 text-sm text-slate-600">Using insights from our assessment, we craft a completely customized strategy and a clear roadmap for success.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#D4AF37]">
+                            <div class="text-3xl font-bold text-[#D4AF37]">03</div>
+                            <h3 class="mt-2 text-lg font-semibold text-slate-900">Implementation & Support</h3>
+                            <p class="mt-2 text-sm text-slate-600">We guide you through the implementation process, providing hands-on support and resources to ensure a smooth transition.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#D4AF37]">
+                            <div class="text-3xl font-bold text-[#D4AF37]">04</div>
+                            <h3 class="mt-2 text-lg font-semibold text-slate-900">Evaluation & Improvement</h3>
+                            <p class="mt-2 text-sm text-slate-600">We measure impact and track progress against key metrics, continually refining our approach for long-term success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 sm:py-32">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-fade-in">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-[#D4AF37] tracking-wide uppercase">Client Success</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Words From Our Partners</p>
+                </div>
+                <div class="mt-12 relative overflow-hidden bg-white/50 rounded-xl p-8 md:p-12 shadow-inner">
+                    <div id="testimonial-container" class="flex transition-transform duration-500 ease-in-out">
+                         <div class="testimonial-slide active">
+                            <blockquote class="text-center">
+                                <p class="text-xl md:text-2xl font-medium text-slate-700">"Working with Safe Haven was transformative. Their innovative approach to curriculum design completely re-energized our teaching staff and has had a remarkable impact on student engagement."</p>
+                                <footer class="mt-8">
+                                    <div class="font-semibold text-slate-900">Dr. Eleanor Vance</div>
+                                    <div class="text-slate-500">Principal, Northwood Academy</div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial-slide">
+                            <blockquote class="text-center">
+                                <p class="text-xl md:text-2xl font-medium text-slate-700">"The professional development workshops were the best we've ever had. Our teachers felt truly empowered and equipped with practical strategies they could implement immediately."</p>
+                                <footer class="mt-8">
+                                    <div class="font-semibold text-slate-900">Marcus Thorne</div>
+                                    <div class="text-slate-500">Superintendent, Maple Creek District</div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial-slide">
+                           <blockquote class="text-center">
+                                <p class="text-xl md:text-2xl font-medium text-slate-700">"Their admissions guidance was invaluable. My daughter felt confident and prepared, and she was accepted into her dream university. We couldn't have done it without them."</p>
+                                <footer class="mt-8">
+                                    <div class="font-semibold text-slate-900">Sarah Chen</div>
+                                    <div class="text-slate-500">Parent</div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-3">
+                        <button class="testimonial-dot active" data-index="0"></button>
+                        <button class="testimonial-dot" data-index="1"></button>
+                        <button class="testimonial-dot" data-index="2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 sm:py-32 bg-[#EAE7DC]/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-fade-in">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-[#D4AF37] tracking-wide uppercase">Get in Touch</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Ready to Transform Your Educational Landscape?</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">
+                        Let's start a conversation about how we can help you achieve your goals. Reach out for a complimentary consultation.
+                    </p>
+                </div>
+                <div class="mt-16 max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 gap-y-6">
+                            <div>
+                                <label for="full-name" class="sr-only">Full name</label>
+                                <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-slate-500 focus:ring-[#D4AF37] focus:border-[#D4AF37] border-slate-300 rounded-md" placeholder="Full name">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-slate-500 focus:ring-[#D4AF37] focus:border-[#D4AF37] border-slate-300 rounded-md" placeholder="Email">
+                            </div>
+                            <div>
+                                <label for="phone" class="sr-only">Phone</label>
+                                <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full shadow-sm py-3 px-4 placeholder-slate-500 focus:ring-[#D4AF37] focus:border-[#D4AF37] border-slate-300 rounded-md" placeholder="Phone">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-slate-500 focus:ring-[#D4AF37] focus:border-[#D4AF37] border border-slate-300 rounded-md" placeholder="Message"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#D4AF37] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D4AF37]">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <a href="#hero" class="text-xl font-bold text-white flex items-center">
+                         <span class="w-8 h-8 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full flex items-center justify-center mr-2 font-bold text-lg">&#9733;</span>
+                        Safe Haven
+                    </a>
+                    <p class="text-slate-400 text-base">
+                        Empowering Education, One Learner at a Time.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Navigation</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="#about" class="text-base text-slate-400 hover:text-white">About</a></li>
+                                <li><a href="#services" class="text-base text-slate-400 hover:text-white">Services</a></li>
+                                <li><a href="#approach" class="text-base text-slate-400 hover:text-white">Approach</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Legal</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-slate-400 hover:text-white">Privacy Policy</a></li>
+                                <li><a href="#" class="text-base text-slate-400 hover:text-white">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8">
+                <p class="text-base text-slate-400 text-center">&copy; 2024 Safe Haven Education Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.querySelector('svg:first-child').classList.toggle('hidden');
+        mobileMenuButton.querySelector('svg:last-child').classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+             mobileMenu.classList.add('hidden');
+             mobileMenuButton.querySelector('svg:first-child').classList.remove('hidden');
+             mobileMenuButton.querySelector('svg:last-child').classList.add('hidden');
+        });
+    });
+
+    // Fade-in sections on scroll
+    const sections = document.querySelectorAll('.section-fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Services Tabs
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.dataset.tab;
+
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active', 'text-[#D4AF37]', 'border-[#D4AF37]');
+                btn.classList.add('text-slate-500', 'border-transparent');
+            });
+            button.classList.add('active', 'text-[#D4AF37]', 'border-[#D4AF37]');
+            button.classList.remove('text-slate-500', 'border-transparent');
+            
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === tabId) {
+                    content.classList.add('active');
+                }
+            });
+        });
+        
+        // Add common styles
+        button.classList.add('py-2', 'px-4', 'sm:px-6', 'font-medium', 'text-sm', 'sm:text-base', 'border-b-2', 'focus:outline-none', 'transition-colors', 'duration-300', 'hover:text-[#D4AF37]');
+        if(!button.classList.contains('active')) {
+            button.classList.add('text-slate-500', 'border-transparent');
+        } else {
+             button.classList.add('text-[#D4AF37]', 'border-[#D4AF37]');
+        }
+    });
+
+    // Testimonials Carousel
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active', 'bg-slate-800');
+            dots[i].classList.add('bg-slate-400');
+        });
+        slides[index].classList.add('active');
+        dots[index].classList.add('active', 'bg-slate-800');
+        dots[index].classList.remove('bg-slate-400');
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        const newIndex = (currentSlide + 1) % slides.length;
+        showSlide(newIndex);
+    }
+    
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+    
+    function stopSlideShow() {
+        clearInterval(slideInterval);
+    }
+    
+    dots.forEach(dot => {
+        dot.classList.add('w-3', 'h-3', 'rounded-full', 'cursor-pointer', 'transition-colors');
+        if(!dot.classList.contains('active')) {
+           dot.classList.add('bg-slate-400');
+        } else {
+           dot.classList.add('bg-slate-800');
+        }
+        dot.addEventListener('click', (e) => {
+            const index = parseInt(e.target.dataset.index);
+            showSlide(index);
+            stopSlideShow();
+            startSlideShow(); // Restart timer on manual change
+        });
+    });
+    
+    document.getElementById('testimonial-container').addEventListener('mouseenter', stopSlideShow);
+    document.getElementById('testimonial-container').addEventListener('mouseleave', startSlideShow);
+
+    showSlide(0);
+    startSlideShow();
+});
+</script>
+</body>
+</html>

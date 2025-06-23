@@ -1,9 +1,24 @@
-body { font-family: 'Arial', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+body { 
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; 
+}
     a {
       text-decoration: none;
       color: inherit;
     }
     .hero-section { 
+      background: url('../images/safehaven2.jpg') no-repeat center center;
+      background-size: 100% 100%;
+
+      color: black; 
+      padding: 100px 0; 
+      text-align: center; 
+    }
+        .hero-section { 
       background: url('../images/safehaven2.jpg') no-repeat center center;
       background-size: 100% 100%;
 

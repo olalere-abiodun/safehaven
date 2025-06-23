@@ -1,80 +1,262 @@
+/* === First CSS === */
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
 body { 
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal; 
 }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .hero-section { 
-      background: url('../images/safehaven2.jpg') no-repeat center center;
-      background-size: 100% 100%;
 
-      color: black; 
-      padding: 100px 0; 
-      text-align: center; 
-    }
-        .hero-section { 
-      background: url('../images/safehaven2.jpg') no-repeat center center;
-      background-size: 100% 100%;
-
-      color: black; 
-      padding: 100px 0; 
-      text-align: center; 
-    }
-    .nav-item a {
-      font-weight: bold;
-      color: black;
-      transition: color 0.3s;
-      
-    }
-    .btn {
-      background-color: #265106;
-      border-color: #265106;
-      color: white;
-    }
-    .hero-section .btn:hover {
-      background-color: #558b27; /* Slightly darker shade for hover */
-      border-color: #558b27;
-    }
-    .custom-height {
-    min-height: 300px; /* or your preferred height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical centering */
-    align-items: center;     /* horizontal centering (optional) */
-    text-align: center;      /* optional: centers the text too */
-    
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+.hero-section { 
+  background: url('../images/safehaven2.jpg') no-repeat center center;
+  background-size: 100% 100%;
+  color: black; 
+  padding: 100px 0; 
+  text-align: center; 
+}
+
+.nav-item a {
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s;
+}
+
+.btn {
+  background-color: #265106;
+  border-color: #265106;
+  color: white;
+}
+
+.hero-section .btn:hover {
+  background-color: #558b27;
+  border-color: #558b27;
+}
+
+.custom-height {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .custom-height h5 {
-  color: white; /* or #f9f9f9 for softer white */
-    font-weight: 600;
-    text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
-    .custom-height p {
-      color: white; /* or #f9f9f9 for softer white */
-      text-align: center;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+.custom-height p {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.checkmark {
+  color: #265106;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.hero-section h1 { font-size: 3rem; font-weight: bold; }
+.hero-section p { font-size: 1.2rem; }
+.section-padding { padding: 60px 0; }
+.service-card { transition: transform 0.3s; }
+.service-card:hover { transform: translateY(-10px); }
+.testimonial-card { background: #f8f9fa; padding: 20px; border-radius: 10px; }
+.blog-card { transition: transform 0.3s; }
+.blog-card:hover { transform: translateY(-10px); }
+.navbar-brand { font-weight: bold; }
+footer { background: #343a40; color: white; padding: 40px 0; }
+
+
+/* === Second CSS (Overrides) === */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(87, 75, 75, 0.5), rgba(87, 75, 75, 0.5)), url('../images/safehaven2.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+.navbar-nav .nav-item.active .nav-link {
+  color: #007bff;
+  font-weight: 600;
+}
+.navbar-brand img {
+  max-height: 50px;
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 60px 0;
+}
+
+/* Services Section */
+.row.equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.equal-height .col-md-3 {
+  display: flex;
+}
+.row.equal-height .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+}
+.row.equal-height .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(0, 0, 0, 0.6); */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
+}
+.card-body h5 {
+  font-weight: 600;
+}
+.card.land-sales { background-image: url('../images/thumb11.jpg'); }
+.card.investment-guidance { background-image: url('../images/thumb2.jpg'); }
+.card.legal-support { background-image: url('../images/thumb3.jpg'); }
+.card.community-development { background-image: url('../images/thumb41.jpg'); }
+.card-body:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Why Choose Us */
+.list-group-item {
+  border: none;
+  font-size: 1.1rem;
+  padding: 15px 0;
+}
+.checkmark {
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Testimonials Carousel */
+.testimonial-carousel .carousel-item {
+  padding: 20px;
+  text-align: center;
+}
+.testimonial-carousel .carousel-item p {
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.testimonial-carousel .carousel-item strong {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+    .carousel-item img {
+      max-height: 400px;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      display: block;
     }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 10px;
+}
 
-  .checkmark {
-      color: #265106;
-      margin-right: 10px;
-      font-size: 1.2em;
+/* Blog Section */
+.blog-card img {
+  object-fit: cover;
+  height: 150px;
+  width: 100%;
+}
+.blog-card .btn {
+  transition: background-color 0.3s ease;
+}
+.blog-card .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Form */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.btn-primary {
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer a {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0;
   }
-
-    .hero-section h1 { font-size: 3rem; font-weight: bold; }
-    .hero-section p { font-size: 1.2rem; }
-    .section-padding { padding: 60px 0; }
-    .service-card { transition: transform 0.3s; }
-    .service-card:hover { transform: translateY(-10px); }
-    .testimonial-card { background: #f8f9fa; padding: 20px; border-radius: 10px; }
-    .blog-card { transition: transform 0.3s; }
-    .blog-card:hover { transform: translateY(-10px); }
-    .navbar-brand { font-weight: bold; }
-    footer { background: #343a40; color: white; padding: 40px 0; }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  .section-padding {
+    padding: 40px 0;
+  }
+}

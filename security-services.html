@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security Services - Safe Haven Realty</title>
+  <title>Security Services - Safe Haven Reality</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -30,23 +30,13 @@
       flex-direction: column;
       min-height: 250px; /* Consistent with other pages */
     }
-    .row.equal-height .card-body {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center content vertically */
-      align-items: center; /* Center content horizontally */
-      color: white; /* Ensure text is readable on background */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Improve text visibility */
-    }
-    .card { 
-      background-color: #b5d4a2; /* Fallback color */
+   
+   .card { 
+       background: linear-gradient( rgba(177, 168, 168, 0.5)), url('images/aesthetic.jpg');
       background-size: cover;
       background-position: center;
     }
-    .card-body h5 {
-      font-weight: 600;
-    }
+   
   </style>
 </head>
 <body>
@@ -60,8 +50,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="otherServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Other Services
@@ -72,10 +62,8 @@
               <li><a class="dropdown-item active" href="security-services.html">Security Services</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="index.html#why-choose-us">Why Choose Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -89,12 +77,18 @@
       <a href="#contact" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
     </div>
   </section>
-
+<!-- About Us Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <h2 class="text-center mb-5">About Us</h2>
+      <p class="text-center">Safe Haven Reality provides a wide range of security services tailored to safeguard individuals, properties, and organizations. From advanced surveillance systems to professional security personnel, our solutions ensure comprehensive protection against physical and digital threats.</p>
+    </div>
+  </section>
   <!-- Content Section -->
-  <section id="content" class="section-padding">
+  <section id="services" class="section-padding">
     <div class="container">
       <h2 class="text-center mb-5">Our Security Services</h2>
-      <p class="text-center">Safe Haven Realty provides a wide range of security services tailored to safeguard individuals, properties, and organizations. From advanced surveillance systems to professional security personnel, our solutions ensure comprehensive protection against physical and digital threats.</p>
+      
       <div class="row equal-height">
         <div class="col-md-3 mb-4">
           <div class="card text-center">
@@ -168,48 +162,58 @@
   <section id="contact" class="section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Contact Us</h2>
-      <form action="mailto:info@safehavenrealty.com" method="post" enctype="text/plain">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+        <form action="mailto:shervie20@gmail.com" method="post" enctype="text/plain">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="Name" class="form-control" id="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="Email" class="form-control" id="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea name="Message" class="form-control" id="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    
+    </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="images/logo.png" alt="">
-          <p>Your trusted partner in land ownership.</p>
+          <img src="images/logo.png" alt="Safe Haven Reality Logo" class="mb-3">
+          <p>Your trusted partner.</p>
         </div>
         <div class="col-md-4">
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blog">Blog</a></li>
           </ul>
         </div>
         <div class="col-md-4">
           <h5>Contact Info</h5>
-          <p>Email: info@safehavenrealty.com</p>
-          <p>Phone: (234) 08168472539</p>
+          <p><a href="mailto:info@safehavenreality.com">info@safehavenreality.com</a></p>
+          <p><a href="tel:08168472539">08168472539</a></p>
+          
+          
         </div>
+         
       </div>
+      
     </div>
+                <p class="text-base text-center">&copy; 2025 Safe Haven. All Rights Reserved.</p>
+            
   </footer>
 
   <!-- Bootstrap 5 JS -->

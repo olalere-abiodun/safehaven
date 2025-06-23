@@ -3,86 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educational Services - Safe Haven Realty</title>
+  <title>Educational Services - Safe Haven Reality</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style/style.css">
   <style>
-    /* Hero section styling */
-    .hero-section { 
-      background: url('images/edubg.jpg') no-repeat center center;
+  
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/edubg.jpg') no-repeat center center;
       background-size: cover;
-      color: black; 
-      padding: 100px 0; 
-      text-align: center; 
-    }
-    /* Ensure cards have equal height */
-    .row.equal-height {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .row.equal-height .col-md-3 {
-      display: flex;
-    }
-    .row.equal-height .card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      min-height: 250px; /* Consistent height for cards */
-    }
-    .row.equal-height .card-body {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center content vertically */
-      align-items: center; /* Center content horizontally */
+      color: white;
+      padding: 120px 0;
+      text-align: center;
     }
     .card { 
-      background-image: url('images/aesthetic.jpg');
+       background: linear-gradient( rgba(177, 168, 168, 0.5)), url('images/aesthetic.jpg');
       background-size: cover;
       background-position: center;
     }
-    /* Style for Recent Educational Initiatives carousel images */
-    .carousel-item img {
-      max-height: 400px; /* Limit height to prevent overly large images */
-      max-width: 100%; /* Ensure image fits within container width */
-      width: auto; /* Maintain aspect ratio */
-      height: auto; /* Maintain aspect ratio */
-      margin: 0 auto; /* Center image horizontally */
-      display: block; /* Ensure block-level centering */
-    }
-    /* Ensure carousel container has a defined width */
-    #initiativesCarousel {
-      max-width: 800px; /* Set a reasonable max width for the carousel */
-      margin: 0 auto; /* Center the carousel container */
-    }
-    /* Adjust carousel control buttons */
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 5%; /* Reduce width to bring buttons closer */
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
-      border-radius: 50%; /* Circular icons */
-      padding: 10px; /* Better visibility */
-    }
+
+    
   </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Safe Haven Reality Logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#about">About Us</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="otherServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Other Services
@@ -93,10 +51,9 @@
               <li><a class="dropdown-item" href="security-services.html">Security Services</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="index.html#why-choose-us">Why Choose Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recent-initiatives">Educational Initiatives</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -106,19 +63,26 @@
   <section id="educational-services" class="hero-section">
     <div class="container">
       <h1>Educational Services</h1>
-      <p>To elevate educational standards by ​providing expert guidance and innovative ​solutions with a world where every learner ​reaches their full potential through ​exceptional education.</p>
+      <p>Elevating educational standards by providing expert guidance and innovative solutions, empowering every learner to reach their full potential through exceptional education.</p>
       <a href="#contact" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
     </div>
   </section>
 
+  <!-- About Us Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <h2 class="text-center mb-5">About Our Educational Services</h2>
+      <p class="text-center">At Safe Haven Reality, our Educational Services division is dedicated to transforming education through comprehensive programs designed to empower learners and institutions. We offer tailored solutions in Educational Consulting, Curriculum Development, Language Learning, and Admission Process support, fostering academic excellence and opening doors to global opportunities.</p>
+    </div>
+  </section>
+
   <!-- Content Section -->
-  <section id="content" class="section-padding">
+  <section id="services" class="section-padding">
     <div class="container">
       <h2 class="text-center mb-5">Our Educational Services</h2>
-      <p class="text-center">Safe Haven Realty offers comprehensive educational services designed to empower learners and institutions. Our programs include Educational Consulting, Curriculum Development, Language Learning, and Admission Process support, fostering academic excellence and global opportunities.</p>
       <div class="row equal-height">
         <div class="col-md-3 mb-4">
-          <div class="card text-center">
+          <div class="card text-center educational-consulting">
             <div class="card-body">
               <h5 class="card-title">Educational Consulting</h5>
               <p class="card-text">Personalized guidance for students, parents, and institutions to navigate educational pathways, including career planning and academic goal-setting.</p>
@@ -126,7 +90,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card text-center">
+          <div class="card text-center curriculum-development">
             <div class="card-body">
               <h5 class="card-title">Curriculum Development</h5>
               <p class="card-text">Tailored curriculum design for schools and organizations, integrating innovative teaching methods and aligning with global standards.</p>
@@ -134,7 +98,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card text-center">
+          <div class="card text-center language-learning">
             <div class="card-body">
               <h5 class="card-title">Language Learning</h5>
               <p class="card-text">Interactive language programs for all ages, focusing on fluency, cultural understanding, and professional communication skills.</p>
@@ -142,7 +106,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card text-center">
+          <div class="card text-center admission-process">
             <div class="card-body">
               <h5 class="card-title">Admission Process</h5>
               <p class="card-text">Expert support for university and school admissions, including application preparation, essay coaching, and interview training.</p>
@@ -163,7 +127,7 @@
           <div class="carousel-item active">
             <img src="images/education1.jpeg" class="d-block" alt="Educational Initiative 1">
             <div class="carousel-caption d-none d-md-block">
-          
+              
             </div>
           </div>
           <div class="carousel-item">
@@ -199,7 +163,7 @@
           <div class="carousel-item">
             <img src="images/education7.jpeg" class="d-block" alt="Educational Initiative 7">
             <div class="carousel-caption d-none d-md-block">
-             
+              
             </div>
           </div>
         </div>
@@ -219,48 +183,58 @@
   <section id="contact" class="section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Contact Us</h2>
-      <form action="mailto:info@safehavenrealty.com" method="post" enctype="text/plain">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+        <form action="mailto:shervie20@gmail.com" method="post" enctype="text/plain">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="Name" class="form-control" id="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="Email" class="form-control" id="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea name="Message" class="form-control" id="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    
+    </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="images/logo.png" alt="">
-          <p>Your trusted partner in land ownership.</p>
+          <img src="images/logo.png" alt="Safe Haven Reality Logo" class="mb-3">
+          <p>Your trusted partner.</p>
         </div>
         <div class="col-md-4">
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blog">Blog</a></li>
           </ul>
         </div>
         <div class="col-md-4">
           <h5>Contact Info</h5>
-          <p>Email: info@safehavenrealty.com</p>
-          <p>Phone: (234) 08168472539</p>
+          <p><a href="mailto:info@safehavenreality.com">info@safehavenreality.com</a></p>
+          <p><a href="tel:08168472539">08168472539</a></p>
+          
+          
         </div>
+         
       </div>
+      
     </div>
+                <p class="text-base text-center">&copy; 2025 Safe Haven. All Rights Reserved.</p>
+            
   </footer>
 
   <!-- Bootstrap 5 JS -->

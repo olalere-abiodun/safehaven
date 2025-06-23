@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safe Haven Realty</title>
+  <title>Safe Haven Reality</title>
+  <!-- bootstrap icons  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style/style.css">
+  <style>
+   
+  </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Safe Haven Reality Logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="otherServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Other Services
@@ -32,9 +39,9 @@
               <li><a class="dropdown-item" href="security-services.html">Security Services</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services Overview</a></li>
           <li class="nav-item"><a class="nav-link" href="#why-choose-us">Why Choose Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -44,7 +51,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero-section">
     <div class="container">
-      <h1>Welcome to Safe Haven Realty</h1>
+      <h1>Welcome to Safe Haven Reality</h1>
       <p>Your trusted partner in land ownership. We connect buyers with high-value properties across thriving locations, making land investment seamless and secure.</p>
       <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
     </div>
@@ -54,7 +61,7 @@
   <section id="about" class="section-padding">
     <div class="container">
       <h2 class="text-center mb-5">About Us</h2>
-      <p class="text-center">Safe Haven Realty is built on the foundation of trust, reliability, and long-term value. We specialize in selling prime lands that serve as the perfect canvas for homes, businesses, and investments. Our mission is to simplify land acquisition by offering transparent processes, strategic locations, and fair pricing. Whether you're looking for a peaceful retreat, a profitable investment, or a place to build your dream home, we ensure you find a space that truly feels like a safe haven.</p>
+      <p class="text-center">Safe Haven Reality is built on the foundation of trust, reliability, and long-term value. We specialize in selling prime lands that serve as the perfect canvas for homes, businesses, and investments. Our mission is to simplify land acquisition by offering transparent processes, strategic locations, and fair pricing. Whether you're looking for a peaceful retreat, a profitable investment, or a place to build your dream home, we ensure you find a space that truly feels like a safe haven.</p>
     </div>
   </section>
 
@@ -62,34 +69,34 @@
   <section id="services" class="section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Our Services</h2>
-      <div class="row">
+      <div class="row equal-height">
         <div class="col-md-3 mb-4">
-          <div class="card service-card text-center">
-            <div class="card-body custom-height" style="background: url('images/thumb11.jpg') no-repeat center center;">
+          <div class="card service-card text-center land-sales">
+            <div class="card-body">
               <h5 class="card-title">Land Sales</h5>
               <p class="card-text">Access verified, high-quality land listings with proper and legal documentation.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card service-card text-center">
-            <div class="card-body custom-height" style="background: url('images/thumb2.jpg') no-repeat center center;">
+          <div class="card service-card text-center investment-guidance">
+            <div class="card-body">
               <h5 class="card-title">Investment Guidance</h5>
               <p class="card-text">Understand the best land investment opportunities for long-term gains.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card service-card text-center">
-            <div class="card-body custom-height" style="background: url('images/thumb3.jpg') no-repeat center center;">
+          <div class="card service-card text-center legal-support">
+            <div class="card-body">
               <h5 class="card-title">Legal Support</h5>
               <p class="card-text">Get assistance with property verification and documentation to ensure secure transactions.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card service-card text-center">
-            <div class="card-body custom-height" style="background: url('images/thumb41.jpg') no-repeat center center;">
+          <div class="card service-card text-center community-development">
+            <div class="card-body">
               <h5 class="card-title">Community Development</h5>
               <p class="card-text">We help connect buyers with potential development partners to bring their projects to life.</p>
             </div>
@@ -104,10 +111,10 @@
     <div class="container">
       <h2 class="text-center mb-5">Why Choose Us?</h2>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><span class="checkmark">✔️</span> Verified land titles and transparent transactions</li>
-        <li class="list-group-item"><span class="checkmark">✔️</span> Competitive pricing and strategic locations</li>
-        <li class="list-group-item"><span class="checkmark">✔️</span> Personalized customer service for hassle-free purchases</li>
-        <li class="list-group-item"><span class="checkmark">✔️</span> Expert consultation on land investment opportunities</li>
+        <li class="list-group-item"><i class="bi bi-check2-circle"></i> Verified land titles and transparent transactions</li>
+        <li class="list-group-item"><i class="bi bi-check2-circle"></i> Competitive pricing and strategic locations</li>
+        <li class="list-group-item"><i class="bi bi-check2-circle"></i> Personalized customer service for hassle-free purchases</li>
+        <li class="list-group-item"><i class="bi bi-check2-circle"></i> Expert consultation on land investment opportunities</li>
       </ul>
     </div>
   </section>
@@ -116,87 +123,56 @@
   <section id="testimonials" class="section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Testimonials</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="testimonial-card">
-            <p>"Safe Haven Realty made my land purchase so easy! Their transparency and support were unmatched."</p>
-            <p><strong>- John D.</strong></p>
+      <div id="testimonialsCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p>"Safe Haven Reality made my land purchase so easy! Their transparency and support were unmatched."</p>
+            <strong>- John D.</strong>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="testimonial-card">
+          <div class="carousel-item">
             <p>"The investment guidance I received helped me choose a property with great potential. Highly recommend!"</p>
-            <p><strong>- Idris S.</strong></p>
+            <strong>- Idris S.</strong>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="testimonial-card">
+          <div class="carousel-item">
             <p>"Their legal support ensured my transaction was secure. I now own my dream plot!"</p>
-            <p><strong>- Ajibola R.</strong></p>
+            <strong>- Ajibola R.</strong>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </section>
-
-  <!-- Blog Section -->
-  <section id="blog" class="section-padding">
-    <div class="container">
-      <h2 class="text-center mb-5">Blog</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img src="images/blog.png" class="card-img-top" alt="Blog Image" style="width: 100px; margin-top: -30px;">
-            <div class="card-body">
-              <h5 class="card-title">Top Tips for Land Investment</h5>
-              <p class="card-text">Learn how to identify high-potential land for long-term gains.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img src="images/blog.png" class="card-img-top" alt="Blog Image" style="width: 100px; margin-top: -30px;">
-            <div class="card-body">
-              <h5 class="card-title">Understanding Property Legalities</h5>
-              <p class="card-text">A guide to navigating the legal aspects of land purchase.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img src="images/blog.png" class="card-img-top" alt="Blog Image" style="width: 100px; margin-top: -30px;">
-            <div class="card-body">
-              <h5 class="card-title">Market Trends in Real Estate</h5>
-              <p class="card-text">Stay updated with the latest trends in the land market.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- Contact Section -->
   <section id="contact" class="section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Contact Us</h2>
-      <form action="mailto:info@safehavenrealty.com" method="post" enctype="text/plain">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+      <form action="mailto:shervie20@gmail.com" method="post" enctype="text/plain">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="Name" class="form-control" id="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="Email" class="form-control" id="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea name="Message" class="form-control" id="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    
+    </form>
     </div>
   </section>
 
@@ -205,8 +181,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="images/logo.png" alt="">
-          <p>Your trusted partner in land ownership.</p>
+          <img src="images/logo.png" alt="Safe Haven Reality Logo" class="mb-3">
+          <p>Your trusted partner.</p>
         </div>
         <div class="col-md-4">
           <h5>Quick Links</h5>
@@ -219,11 +195,17 @@
         </div>
         <div class="col-md-4">
           <h5>Contact Info</h5>
-          <p>Email: info@safehavenrealty.com</p>
-          <p>Phone: (234) 08168472539</p>
+          <p><a href="mailto:info@safehavenreality.com">info@safehavenreality.com</a></p>
+          <p><a href="tel:08168472539">08168472539</a></p>
+          
+          
         </div>
+         
       </div>
+      
     </div>
+                <p class="text-base text-center">&copy; 2025 Safe Haven. All Rights Reserved.</p>
+            
   </footer>
 
   <!-- Bootstrap 5 JS -->
